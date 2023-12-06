@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    {%for key, val in res.items%}
+        <p>{{key}} : {{val}}</p>
+    {%endfor%}
+
+    {%for key, val in tier.items%}
+        <p>{{key}} : {{val}}</p>
+    {%endfor%}
+{% endblock %}

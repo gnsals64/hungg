@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>hun.gg</h1>
+<form action="search" method="get">
+    {% csrf_token %}
+    <div>
+        <label for="ID"></label>
+        <input type="text" placeholder="소환사명" name="search_text" value="{{search_text}}">
+    </div>
+    <br>
+    <input type="submit" value="검색">
+</form>
+{% endblock %}
