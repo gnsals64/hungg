@@ -27,9 +27,13 @@ def search_res(request):
 
     summoner_info = requests.get("https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/" + str(summoner_response['id']), headers=request_headers)
     summoner_info = summoner_info.json()
-
+    if not summoner_info :
+        return render(request, 'score/no_solorank.html')
+    if summoner_info[0]['queueType'] == 'RANKED_FLEX_SR':
+        return render(request, 'score/no_solorank.html')
     summoner_result['name'] = summoner_response['name']
     summoner_result['level'] = summoner_response['summonerLevel']
+    summoner_result['icon'] = 'https://ddragon.leagueoflegends.com/cdn/13.24.1/img/profileicon/' + str(summoner_response['profileIconId']) + '.png'
     summoner_tier['tier'] = summoner_info[0]['tier']
     summoner_tier['rank'] = summoner_info[0]['rank']
     summoner_tier['wins'] =  summoner_info[0]['wins']
