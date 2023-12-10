@@ -1,8 +1,16 @@
 {% load static %}
+<head>
+	<style>
+		.logo {
+			width: 30%;
+			height: 30%;
+		}
+	</style>
+</head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
     <div class="container-fluid">
         <a class="navbar-brand" display:block href="{% url 'score:main' %}" >
-            <img class="logo" src="{% static 'logo_notitle.png' %}" height="30%" width="30%" alt="로고">
+            <img class="logo" src="{% static 'logo_notitle.png' %}"  alt="로고">
         </a>
         <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse"

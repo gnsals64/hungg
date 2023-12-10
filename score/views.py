@@ -18,13 +18,13 @@ def score_view(request):
 def search_res(request):
     summoner_result = {}
     summoner_tier = {}
-    
+
     summoner_name = request.GET.get('search_text')
     summoner_response = requests.get("https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + str(summoner_name), headers=request_headers)
     if summoner_response.status_code == requests.codes.not_found:
         return render(request, 'score/404_not_found.html')
     summoner_response = summoner_response.json()
-    
+
     summoner_info = requests.get("https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/" + str(summoner_response['id']), headers=request_headers)
     summoner_info = summoner_info.json()
 
@@ -34,6 +34,7 @@ def search_res(request):
     summoner_tier['rank'] = summoner_info[0]['rank']
     summoner_tier['wins'] =  summoner_info[0]['wins']
     summoner_tier['losses'] = summoner_info[0]['losses']
-    
+    summoner_tier['winrate'] = int(summoner_tier['wins'] / (summoner_info[0]['wins'] + summoner_info[0]['losses']) * 100)
+
     # sum_result['profileIconId'] = summoners_response['profileIconId']
     return render(request, 'score/search_res.html', {'res': summoner_result, 'tier': summoner_tier})

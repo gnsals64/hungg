@@ -1,0 +1,35 @@
+{% load static %}
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'card.css' %}">
+</head>
+<div class="card-container_left">
+<img src="https://i.postimg.cc/NfR2yhNs/image-equilibrium.jpg" alt="Spinning glass cube"/>
+	<main class="main-content">
+	<h1>{{res.name}}</h1>
+	<p>솔로랭크<br>{{tier.tier}} {{tier.rank}}</p>
+	<div class="flex-row">
+		<div class="level-base">
+		  <h2>level : {{res.level}}</h2>
+		</div>
+		<div class="winrate">
+		  <p>{{tier.wins}}승 {{tier.losses}}패 ({{tier.winrate}}%)</p>
+		</div>
+	  </div>
+	</main>.
+</div>
+
+<div class="card-container_right">
+	<img src="https://i.postimg.cc/NfR2yhNs/image-equilibrium.jpg" alt="Spinning glass cube"/>
+	<main class="main-content">
+	<h1>{{res.name}}</h1>
+	<p>자유랭크<br>{{tier.tier}} {{tier.rank}}</p>
+	<div class="flex-row">
+		<div class="level-base">
+		  <h2>level : {{res.level}}</h2>
+		</div>
+		<div class="winrate">
+		  <p>{{tier.wins}}승 {{tier.losses}}패 ({{tier.winrate}}%)</p>
+		</div>
+	  </div>
+	</main>.
+</div>

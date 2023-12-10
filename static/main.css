@@ -8,7 +8,9 @@ body {
 .logo {
     display: block;
     margin: 0 auto;
-    max-width: 600px; /* 로고 이미지의 최대 너비를 조절하세요 */
+	width: 200px;
+	height: 40px;
+     /* 로고 이미지의 최대 너비를 조절하세요 */
 }
 
 .search{
@@ -34,7 +36,7 @@ body {
 }
 
 .search .search-input{
-    
+
     padding: 0 10px;
     width: 550px;
     caret-color: white;
@@ -59,15 +61,6 @@ body {
     align-items: center;
     color: #E0ECF8;
     background-color: #536bf6;
-}
-
-a:link{
-    text-decoration: none;
-}
-
-input:-webkit-autofill {
-	-webkit-box-shadow: 0 0 0 1000px white inset;
-	box-shadow: 0 0 0 1000px white inset;
 }
 
 .body_404 {

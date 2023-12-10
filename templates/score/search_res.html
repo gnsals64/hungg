@@ -1,10 +1,5 @@
 {% extends 'base.html' %}
+{%load static%}
 {% block content %}
-    {%for key, val in res.items%}
-        <p>{{key}} : {{val}}</p>
-    {%endfor%}
-
-    {%for key, val in tier.items%}
-        <p>{{key}} : {{val}}</p>
-    {%endfor%}
+	{% include "score/search_card.html" %}
 {% endblock %}
